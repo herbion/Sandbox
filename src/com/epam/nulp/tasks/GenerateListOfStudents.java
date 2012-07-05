@@ -2,52 +2,52 @@ package com.epam.nulp.tasks;
 
 import java.util.*;
 
-
 public class GenerateListOfStudents {
-    
-    public static List<Student> generate(String[] students) {
+
+    public static List<Student> generate(String[] studentsNames) {
 	List<Student> studentsList = new LinkedList<Student>();
 	Random ageRandom = new Random(47);
-	for (String stud : students) {
-	    String [] fio = stud.split("  ");
-	    studentsList.add(new Student(fio[1], fio[2], fio[0], (byte) (18 + ageRandom.nextInt(10))));
+	for (String stud : studentsNames) {
+	    String[] fio = stud.split("\\s+");
+	    studentsList.add(new Student(fio[1], fio[2], fio[0],
+		    (byte) (18 + ageRandom.nextInt(10))));
 	}
 	return studentsList;
     }
-    public static  List<Student> generateDefault() {
-	return GenerateListOfStudents.generate(	new String[] {
 
+    public static List<Student> generateDefault() {
+	return GenerateListOfStudents.generate(new String[] {
 		"Беднаровський  Ігор  Геннадійович",
-		"Волох  Данило  Сергійович",
+		"Волох  Данило  Сергійович", 
 		"Галаз  Тарас  Орестович",
-		"Гутей  Богдан  Богданович",
+		"Гутей  Богдан  Богданович", 
 		"Дедюхін  Степан  Ігорович",
 		"Жибак  Віктор  Ярославович", 
 		"Когут  Марія  Миронівна",
-		"Косован  Костя  Сергійович",
+		"Косован  Костя  Сергійович", 
 		"Маков’як  Роман  Володимирович",
-		"Манько  Сергій  Володимирович",
+		"Манько  Сергій  Володимирович", 
 		"Місюрик  Андрій  Петрович",
-		"Ноцик  Роман  Зиновійович",
-		"Огородник  Тарас  Ігорович", 
+		"Ноцик  Роман  Зиновійович", 
+		"Огородник  Тарас  Ігорович",
 		"Перхун  Григорій  Романович", 
 		"Петришин  Інна  Ярославівна",
-		"Приймак  Дмитро  Васильович",
-		"Приймак  Михайло  Васильович", 
+		"Приймак  Дмитро  Васильович", 
+		"Приймак  Михайло  Васильович",
 		"Псуй  Ярослав  Володимирович",
 		"Романкевич  Павло  Андрійович",
 		"Ротенберг  Дмитро  Вікторович",
 		"Сточанський  Ярослав  Степанович", 
 		"Талаш  Павло  Михайлович",
-		"Федина  Михайло  Вікторович", 
+		"Федина  Михайло  Вікторович",
 		"Ясенецький  Максим  Сергійович", 
 		"Кольбух  Тарас  Михайлович",
-		"Родін  Олексій  Олександрович",
-	});
-	
+		"Родін  Олексій  Олександрович", });
     }
+
     public static void main(String[] args) {
-	for (Student student : generateDefault()) 
-	    System.out.println(student);
+	 for (Student student : generateDefault())
+	     System.out.println(student);
     }
+
 }
