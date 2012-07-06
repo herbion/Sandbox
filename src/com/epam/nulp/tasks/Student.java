@@ -9,6 +9,7 @@ public class Student implements Comparable<Student> {
     private String middleName;
     private String lastName;
     private byte age;
+    
     @SuppressWarnings("unused")
     private Student() {
 
